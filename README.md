@@ -6,3 +6,7 @@ This repository includes the source code of the paper titled "Systematic Computa
 
 ## Test Fibonacci and Ising Models' Braid Matrix Generator Codes
 `PYTHONPATH=./codes pytest`
+
+## License
+
+Copyright © 2022, [Constantine Quantum Technologies](https://cqtech.org). Released under the [Apache License 2.0](LICENSE).
