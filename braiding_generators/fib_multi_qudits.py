@@ -32,10 +32,10 @@ TODO:
     - Translate to Cpp
 """
 
-import codes.braiding_generators.fib_qudit as fibo
-from codes.braiding_generators.fib_qudit import F, B
+import braiding_generators.fib_qudit as fibo
+from braiding_generators.fib_qudit import F, B
 from copy import deepcopy
-from codes.cplot import cplot
+from tools.cplot import cplot
 
 
 def check_state(state):

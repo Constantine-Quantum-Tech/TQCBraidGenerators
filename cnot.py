@@ -1,14 +1,15 @@
 """
 Reproduce Bonesteel CNOT gate.
 """
+import os
 import pickle
 import numpy as np
 
-from codes.braid_matrix_calculator import error_distance, get_matrix, leakage_error
-from codes.transformer import uncouple, time_mirror, uncouple_all
-import codes.braiding_generators.fib_multi_qudits as multi_q
-from codes.matrix_tools import extract, combine_diag
-from codes.cplot import cplot, scale
+from tools.braid_matrix_calculator import error_distance, get_matrix, leakage_error
+from tools.transformer import uncouple, time_mirror, uncouple_all
+import braiding_generators.fib_multi_qudits as multi_q
+from tools.matrix_tools import extract, combine_diag
+from tools.cplot import cplot, scale
 
 tol = 0.01
 # precomputed sequence
@@ -47,27 +48,36 @@ sequence =  {'sigma': [3, 4, 4, 3, 3, 4, 2, 3, 3, 2, 4, 3, 3, 4, 2, 3, 3, 2, 4,
                        1, 1, 1, 1, -1, -1, -1, -1, -1, -1]}
 
 # Calculate sigmas of 2 qubits (3 anyons per qubit)
+nb_qubits = 2
+nb_anyons_per_qubit = 3
+
+if not os.path.isdir(f"bin"):
+    os.mkdir(f"bin")
+
+if not os.path.isdir(f"images"):
+    os.mkdir(f"images")
+
 try:
-    with open("bin/basis-2q-6a.pickle", "rb") as file:
+    with open(f"bin/basis-{nb_qubits}q-{nb_anyons_per_qubit*nb_qubits}a.pickle", "rb") as file:
         basis = pickle.load(file)
 
-    with open("bin/SIG-2q-6a.pickle", "rb") as file:
+    with open(f"bin/SIG-{nb_qubits}q-{nb_anyons_per_qubit*nb_qubits}a.pickle", "rb") as file:
         SIG = pickle.load(file)
 
 except FileNotFoundError:
     SIG = {}
-    for index in range(5):
+    for index in range(nb_anyons_per_qubit*nb_qubits-1):
         n = index + 1
         SIG[n] = {}
-        gen = multi_q.braiding_generator(n, 2, 2, show=False)
+        gen = multi_q.braiding_generator(n, nb_qubits, nb_anyons_per_qubit-1, show=False)
 
         SIG[n][1] = np.array(gen[0])
         SIG[n][-1] = np.array(np.linalg.inv(gen[0]))
 
     basis = gen[1]
-    with open("bin/basis-2q-6a.pickle", "wb") as file:
+    with open(f"bin/basis-{nb_qubits}q-{nb_anyons_per_qubit*nb_qubits}a.pickle", "wb") as file:
         pickle.dump(basis, file)
-    with open("bin/SIG-2q-6a.pickle", "wb") as file:
+    with open(f"bin/SIG-{nb_qubits}q-{nb_anyons_per_qubit*nb_qubits}a.pickle", "wb") as file:
         pickle.dump(SIG, file)
 
 #

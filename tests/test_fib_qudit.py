@@ -1,5 +1,5 @@
 import numpy as np
-from codes.braiding_generators.fib_qudit import (
+from braiding_generators.fib_qudit import (
     check_rule,
     check_state,
     find_basis,

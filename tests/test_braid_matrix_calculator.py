@@ -1,5 +1,5 @@
 import numpy as np
-from codes.braid_matrix_calculator import (
+from tools.braid_matrix_calculator import (
     error_distance,
     leakage_error,
     get_matrix
