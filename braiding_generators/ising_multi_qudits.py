@@ -32,10 +32,10 @@ TODO:
     - Translate to Cpp
 """
 import numpy as np
-import codes.braiding_generators.ising_qudit as ising
-from codes.braiding_generators.ising_qudit import F, B
+import braiding_generators.ising_qudit as ising
+from braiding_generators.ising_qudit import F, B
 from copy import deepcopy
-from codes.cplot import cplot
+from tools.cplot import cplot
 
 
 def check_state(state):

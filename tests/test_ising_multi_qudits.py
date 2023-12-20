@@ -1,11 +1,11 @@
 import numpy as np
-from codes.braiding_generators.ising_multi_qudits import (
+from braiding_generators.ising_multi_qudits import (
     check_state,
     find_basis,
     braiding_generator
     )
 
-import codes.braiding_generators.ising_qudit as ising
+import braiding_generators.ising_qudit as ising
 
 
 def test_check_state():

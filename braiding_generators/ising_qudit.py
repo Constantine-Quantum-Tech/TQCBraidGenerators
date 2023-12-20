@@ -24,7 +24,7 @@ This model is designed to:
 
 import numpy as np
 from copy import deepcopy
-from codes.cplot import cplot
+from tools.cplot import cplot
 
 
 def F(a1, a2, a3, outcome):

@@ -32,7 +32,7 @@ This model is designed to:
 import numpy as np
 from typing import List
 from copy import deepcopy
-from codes.cplot import cplot
+from tools.cplot import cplot
 
 
 def check_rule(anyon_1, anyon_2, outcome):
