@@ -1,14 +1,17 @@
 # TQCBraidGenerators
 This repository includes the source code of the paper titled "Systematic Computation of Braid Generator Matrix in Topological Quantum Computing" available in arXiv : https://arxiv.org/abs/2307.01892
 
-## Generate CNOT Results
+## Install Requirements
 ```
-python cnot.py
+pip install -r requirements.txt
 ```
-
 ## Test Fibonacci and Ising Models' Braid Matrix Generator Codes
 ```
 python -m pytest
+```
+## Generate CNOT Results
+```
+python cnot.py
 ```
 ## GHZ state preparation
 See [ghz-state-preparation.ipynb](ghz-state-preparation.ipynb) Jupyter notebook.
