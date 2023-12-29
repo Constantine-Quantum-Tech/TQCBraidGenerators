@@ -20,5 +20,5 @@ See [ghz-state-preparation.ipynb](ghz-state-preparation.ipynb) Jupyter notebook.
 
 ## License
 
-Copyright © 2022, [Constantine Quantum Technologies](https://cqtech.org). Released under the [Apache License 2.0](LICENSE).
+Copyright © 2023, [Constantine Quantum Technologies](https://cqtech.org). Released under the [Apache License 2.0](LICENSE).
 
